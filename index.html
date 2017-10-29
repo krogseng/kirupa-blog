@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  <script src="https://npmcdn.com/react-router@3.0.2/umd/ReactRouter.min.js"></script>
+
+  <style>
+    body {
+      background-color: #FFCC00;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1,
+    h2,
+    p,
+    ul,
+    li {
+      font-family: Helvetica, Arial, sans-serif
+    }
+
+    ul.header li {
+      display: inline;
+      list-style-type: none;
+      margin: 0;
+    }
+
+    ul.header {
+      background-color: #111;
+      padding: 0;
+    }
+
+    ul.header li a {
+      color: #FFF;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 20px;
+      display: inline-block;
+    }
+
+    .content {
+      background-color: #FFF;
+      padding: 20px;
+    }
+
+    .content h2 {
+      padding: 0;
+      margin: 0;
+    }
+
+    .content li {
+      margin-bottom: 10px;
+    }
+
+    .active {
+      background-color: #0099FF;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+  </div>
+
+  <script type="text/babel">
+    let { Router, Route, IndexRoute, IndexLink, hashHistory, Link } = ReactRouter; let Home = React.createClass({ render: function()
+    { return (
+    <div>
+      <h2>HELLO, LYNN</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
+        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
+        unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
+        more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+      <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+    </div>
+    ); } }); let Contact = React.createClass({ render: function() { return (
+    <div>
+      <h2>Got Questions?</h2>
+      <p>The easiest thing to do is post on our <a href="http://forum.kirupa.com">forums</a>.
+      </p>
+    </div>
+    ); } }); 
+    let Stuff = React.createClass({ render: function() { return (
+    <div>
+      <h2>Stuff...</h2>
+      <p>Aenean venenatis massa et luctus rhoncus. Pellentesque at facilisis sem, sed scelerisque sem. Duis vulputate magna
+        justo, vel euismod lectus vulputate sed. Maecenas ante massa, fringilla nec blandit at, venenatis dignissim nulla.
+        Nullam fringilla, lacus non accumsan facilisis, libero massa ultrices leo, quis consectetur risus nisi id est. Duis
+        finibus nulla in tellus convallis, et convallis odio dignissim. Proin quis purus nec sem dapibus bibendum. Praesent
+        ipsum nunc, luctus sit amet vehicula eu, faucibus in nunc. Integer porta quis augue id iaculis.
+      </p>
+      <ol>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Duis at leo laoreet, mattis orci ut, elementum massa.</li>
+        <li>Aliquam quis massa id erat sagittis ultrices id ac elit.</li>
+        <li>Lusce scelerisque neque quis augue lobortis, eu hendrerit quam pulvinar.</li>
+        <li>Curabitur non lectus eu ante placerat viverra nec a tortor.</li>
+      </ol>
+    </div>
+    ); 
+      } }); 
+    let App = React.createClass({ render: function() { return (
+    <div>
+      <h1>Simple SPA</h1>
+      <ul className="header">
+        <li>
+          <IndexLink to="/" activeClassName="active">Home</IndexLink>
+        </li>
+        <li>
+          <Link to="/stuff" activeClassName="active">Stuff</Link>
+        </li>
+        <li>
+          <Link to="/contact" activeClassName="active">Contact</Link>
+        </li>
+      </ul>
+      <div className="content">
+        {this.props.children}
+      </div>
+    </div>
+    ) } }); let destination = document.querySelector("#container"); ReactDOM.render(
+    <Router history={hashHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Home}/>
+        <Route path="stuff" component={Stuff}/>
+        <Route path="contact" component={Contact}/>
+      </Route>
+    </Router>, destination );
+  </script>
+</body>
+
+</html>
