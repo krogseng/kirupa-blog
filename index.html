@@ -72,13 +72,9 @@
     { return (
     <div>
       <h2>HELLO, LYNN</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-        book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially
-        unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and
-        more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <p>This is the beginning of my new blog site.
       </p>
-      <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
+      <p>I am working on this page. This is the code that is not creating a new line after semi-colon.</p>
     </div>
     ); } }); let Contact = React.createClass({ render: function() { return (
     <div>
@@ -87,26 +83,26 @@
       </p>
     </div>
     ); } }); 
-    let Stuff = React.createClass({ render: function() { return (
+    let Stuff = React.createClass({ render: function() { 
+      return (
     <div>
       <h2>Stuff...</h2>
-      <p>Aenean venenatis massa et luctus rhoncus. Pellentesque at facilisis sem, sed scelerisque sem. Duis vulputate magna
-        justo, vel euismod lectus vulputate sed. Maecenas ante massa, fringilla nec blandit at, venenatis dignissim nulla.
-        Nullam fringilla, lacus non accumsan facilisis, libero massa ultrices leo, quis consectetur risus nisi id est. Duis
-        finibus nulla in tellus convallis, et convallis odio dignissim. Proin quis purus nec sem dapibus bibendum. Praesent
-        ipsum nunc, luctus sit amet vehicula eu, faucibus in nunc. Integer porta quis augue id iaculis.
+      <p>Temporary filler page. I will expand this content tonight.
       </p>
       <ol>
-        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-        <li>Duis at leo laoreet, mattis orci ut, elementum massa.</li>
+        <li>List Items.</li>
+        <li>Good place to identify tasks to be completed.</li>
         <li>Aliquam quis massa id erat sagittis ultrices id ac elit.</li>
         <li>Lusce scelerisque neque quis augue lobortis, eu hendrerit quam pulvinar.</li>
         <li>Curabitur non lectus eu ante placerat viverra nec a tortor.</li>
       </ol>
     </div>
     ); 
-      } }); 
-    let App = React.createClass({ render: function() { return (
+      }
+       }); 
+
+    let App = React.createClass({ render: function() { 
+      return (
     <div>
       <h1>Simple SPA</h1>
       <ul className="header">
@@ -124,7 +120,11 @@
         {this.props.children}
       </div>
     </div>
-    ) } }); let destination = document.querySelector("#container"); ReactDOM.render(
+    ) }
+     }); 
+
+    let destination = document.querySelector("#container"); 
+    ReactDOM.render(
     <Router history={hashHistory}>
       <Route path="/" component={App}>
         <IndexRoute component={Home}/>
